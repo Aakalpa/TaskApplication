@@ -8,8 +8,87 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         ResizeMode="NoResize" WindowStyle="None"
-        Background="Transparent" AllowsTransparency="True">
-    <Grid>
-        
-    </Grid>
+        Background="Transparent" AllowsTransparency="True"
+        MouseLeftButtonDown="dragOver">
+    <Border CornerRadius="10" 
+            Background="#14274e">
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel>
+
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Margin="10, 30">
+                    <materialDesign:PackIcon Kind="Book"
+                                             Foreground="White"
+                                             Height="20"
+                                             Width="20"
+                                             Margin="0,0,10,0"/>
+                    <TextBlock Text="App"
+                               Foreground="White"
+                               FontSize="18"
+                               FontFamily="Fonts/#Dosis"
+                               FontWeight="Bold"
+                               />
+                </StackPanel>
+                <StackPanel Margin="10">
+                    <RadioButton Content="Home"
+                                 Height="40"
+                                 FontSize="14"
+                                 FontFamily="Fonts/#Padauk"
+                                 FontWeight="ExtraLight"
+                                 Foreground="white"
+                                 Style="{StaticResource MenuButtonTheme}"/>
+                    <RadioButton Content="Upload"
+                                 Height="40"
+                                 FontSize="14"
+                                 FontFamily="Fonts/#Padauk"
+                                 FontWeight="ExtraLight"
+                                 Foreground="white"
+                                 Style="{StaticResource MenuButtonTheme}"/>
+                    <RadioButton Content="Download"
+                                 Height="40"
+                                 FontSize="14"
+                                 FontFamily="Fonts/#Padauk"
+                                 FontWeight="ExtraLight"
+                                 Foreground="white"
+                                 Style="{StaticResource MenuButtonTheme}"/>
+                </StackPanel>
+
+            </StackPanel>
+
+            <Border Grid.Column="1"
+                    CornerRadius="10"
+                    Background="#f1f6f9">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="right"
+                                Margin="10">
+                        <Image Source="Images/profile.png"
+                               Height="25"
+                               Width="25"
+                               Margin="0,0,10,0"/>
+                        <TextBlock Text="Peter Jones"
+                                   Foreground="#394867"
+                                   FontSize="14"
+                                   FontFamily="Fonts/#Padauk"
+                                   FontWeight="Light"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+        </Grid>
+    </Border>
 </Window>

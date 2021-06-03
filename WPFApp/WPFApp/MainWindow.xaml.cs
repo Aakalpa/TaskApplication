@@ -24,5 +24,13 @@ namespace WPFApp
         {
             InitializeComponent();
         }
+
+        private void dragOver(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
     }
 }
