@@ -68,7 +68,27 @@
                                  Foreground="white"
                                  Style="{StaticResource MenuButtonTheme}"/>
                 </StackPanel>
-
+                <StackPanel Orientation="Horizontal"
+                            Margin="40, 130">
+                    <materialDesign:PackIcon Kind="Logout"
+                                             Foreground="white"
+                                             Height="15"
+                                             Width="15"/>
+                    <Button x:Name="ButtonLogout" 
+                            Content="Logout"
+                            Foreground="White"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Padding="0"
+                            Width="50"
+                            Height="20"
+                            FontSize="12"
+                            FontFamily="Fonts/#Padauk"
+                            FontWeight="ExtraLight"
+                            Click="ButtonLogout_Click">
+                        
+                    </Button>
+                </StackPanel>
             </StackPanel>
 
             <Border Grid.Column="1"

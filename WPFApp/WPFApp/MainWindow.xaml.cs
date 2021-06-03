@@ -32,5 +32,10 @@ namespace WPFApp
                 DragMove();
             }
         }
+
+        private void ButtonLogout_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
