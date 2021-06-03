@@ -39,6 +39,7 @@
                                />
                 </StackPanel>
                 <StackPanel Margin="0,20">
+
                     <RadioButton Content="Home"
                                  Height="35"
                                  FontSize="12"
@@ -86,7 +87,20 @@
                             FontFamily="Fonts/#Padauk"
                             FontWeight="ExtraLight"
                             Click="ButtonLogout_Click">
-                        
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Stroke.Color">
+                                            <ColorAnimationUsingKeyFrames.KeyFrames>
+                                                <LinearColorKeyFrame Value="#203152"
+                                                                     KeyTime="0:0:0.5"/>
+                                            </ColorAnimationUsingKeyFrames.KeyFrames>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
                     </Button>
                 </StackPanel>
             </StackPanel>
