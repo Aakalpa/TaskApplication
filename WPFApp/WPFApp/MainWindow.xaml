@@ -24,8 +24,8 @@
 
                 <StackPanel Orientation="Horizontal"
                             VerticalAlignment="Center"
-                            HorizontalAlignment="Center"
-                            Margin="10, 30">
+                            HorizontalAlignment="Left"
+                            Margin="40, 30">
                     <materialDesign:PackIcon Kind="Book"
                                              Foreground="White"
                                              Height="20"
@@ -38,24 +38,31 @@
                                FontWeight="Bold"
                                />
                 </StackPanel>
-                <StackPanel Margin="10">
+                <StackPanel Margin="0,20">
                     <RadioButton Content="Home"
-                                 Height="40"
-                                 FontSize="14"
+                                 Height="35"
+                                 FontSize="12"
                                  FontFamily="Fonts/#Padauk"
                                  FontWeight="ExtraLight"
                                  Foreground="white"
                                  Style="{StaticResource MenuButtonTheme}"/>
                     <RadioButton Content="Upload"
-                                 Height="40"
-                                 FontSize="14"
+                                 Height="35"
+                                 FontSize="12"
                                  FontFamily="Fonts/#Padauk"
                                  FontWeight="ExtraLight"
                                  Foreground="white"
                                  Style="{StaticResource MenuButtonTheme}"/>
                     <RadioButton Content="Download"
-                                 Height="40"
-                                 FontSize="14"
+                                 Height="35"
+                                 FontSize="12"
+                                 FontFamily="Fonts/#Padauk"
+                                 FontWeight="ExtraLight"
+                                 Foreground="white"
+                                 Style="{StaticResource MenuButtonTheme}"/>
+                    <RadioButton Content="Logs"
+                                 Height="35"
+                                 FontSize="12"
                                  FontFamily="Fonts/#Padauk"
                                  FontWeight="ExtraLight"
                                  Foreground="white"
@@ -75,7 +82,7 @@
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="right"
-                                Margin="10">
+                                Margin="20, 10">
                         <Image Source="Images/profile.png"
                                Height="25"
                                Width="25"
