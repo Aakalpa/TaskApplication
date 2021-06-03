@@ -21,3 +21,9 @@ C:\Users\Lumanti.Dangol\Desktop\.net\TaskApplication\WPFApp\WPFApp\obj\Debug\WPF
 C:\Users\Lumanti.Dangol\Desktop\.net\TaskApplication\WPFApp\WPFApp\obj\Debug\WPFApp.exe
 C:\Users\Lumanti.Dangol\Desktop\.net\TaskApplication\WPFApp\WPFApp\obj\Debug\WPFApp.pdb
 C:\Users\Lumanti.Dangol\Desktop\.net\TaskApplication\WPFApp\WPFApp\obj\Debug\Styles\MenuButtonTheme.baml
+C:\Users\Lumanti.Dangol\Desktop\.net\TaskApplication\WPFApp\WPFApp\obj\Debug\MVVM\Views\DownloadView.g.cs
+C:\Users\Lumanti.Dangol\Desktop\.net\TaskApplication\WPFApp\WPFApp\obj\Debug\MVVM\Views\LogsView.g.cs
+C:\Users\Lumanti.Dangol\Desktop\.net\TaskApplication\WPFApp\WPFApp\obj\Debug\MVVM\Views\UploadView.g.cs
+C:\Users\Lumanti.Dangol\Desktop\.net\TaskApplication\WPFApp\WPFApp\obj\Debug\MVVM\Views\DownloadView.baml
+C:\Users\Lumanti.Dangol\Desktop\.net\TaskApplication\WPFApp\WPFApp\obj\Debug\MVVM\Views\LogsView.baml
+C:\Users\Lumanti.Dangol\Desktop\.net\TaskApplication\WPFApp\WPFApp\obj\Debug\MVVM\Views\UploadView.baml

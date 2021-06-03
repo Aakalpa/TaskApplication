@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Lumanti.Dangol\Desktop\.net\TaskApplication\WPFApp\WPFApp\App.xaml
-21040498040
+51899596934
 
-61434861427
+91993874145
 15-551188615
-MainWindow.xaml;Styles\MenuButtonTheme.xaml;
+MainWindow.xaml;MVVM\Views\DownloadView.xaml;MVVM\Views\LogsView.xaml;MVVM\Views\UploadView.xaml;Styles\MenuButtonTheme.xaml;
 
 True
 

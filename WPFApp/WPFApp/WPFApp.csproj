@@ -75,12 +75,33 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MVVM\Views\DownloadView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\Views\LogsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\Views\UploadView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\MenuButtonTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\Views\DownloadView.xaml.cs">
+      <DependentUpon>DownloadView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\Views\LogsView.xaml.cs">
+      <DependentUpon>LogsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\Views\UploadView.xaml.cs">
+      <DependentUpon>UploadView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -114,6 +135,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MVVM\Models\" />
+    <Folder Include="MVVM\ViewModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />
