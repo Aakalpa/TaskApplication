@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WPFApp.MVVM.Views
 {
     /// <summary>
-    /// Interaction logic for UploadView.xaml
+    /// Interaction logic for HomeView.xaml
     /// </summary>
-    public partial class UploadView : UserControl
+    public partial class HomeView : UserControl
     {
-        public UploadView()
+        public HomeView()
         {
             InitializeComponent();
         }
