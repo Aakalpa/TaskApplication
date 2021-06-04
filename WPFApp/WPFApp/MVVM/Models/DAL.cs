@@ -24,7 +24,7 @@ namespace WPFApp.MVVM.Models
     }
     public class DAL
     {
-        public ObservableCollection<Object> Data = new ObservableCollection<Object>();
+        public ObservableCollection<File> Data = new ObservableCollection<File>();
         public DAL()
         {
             Data.Add(new File() { FileName = "hello", CreatedDate = new DateTime(2021, 6, 4)});
@@ -32,6 +32,11 @@ namespace WPFApp.MVVM.Models
             Data.Add(new File() { FileName = "how", CreatedDate = new DateTime(2021, 6, 4) });
             Data.Add(new File() { FileName = "are", CreatedDate = new DateTime(2021, 6, 4) });
             Data.Add(new File() { FileName = "you", CreatedDate = new DateTime(2021, 6, 4) });
+        }
+
+        public ObservableCollection<File> GetAll()
+        {
+            return Data;
         }
     }
 }

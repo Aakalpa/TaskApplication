@@ -4,16 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFApp.MVVM.Views"
+             xmlns:model="clr-namespace:WPFApp.MVVM.Models"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="650">
+             d:DesignHeight="400" d:DesignWidth="650"
+             >
+
+    <UserControl.DataContext>
+        <model:DAL/>
+    </UserControl.DataContext>
 
     <Grid>
-        <DataGrid Name="ListToDownload" 
+        <DataGrid x:Name="ListToDownload" 
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
                   CanUserSortColumns="True" 
                   IsReadOnly="True"
-                  Margin="40">
+                  Margin="40"
+                  ItemsSource="{Binding Path=Data}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="FileName"
                                     Width="auto"
