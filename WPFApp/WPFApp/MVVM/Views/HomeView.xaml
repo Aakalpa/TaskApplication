@@ -7,20 +7,30 @@
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="650">
     <Grid>
-        <DataGrid x:Name="ListToDownload" 
+        <DataGrid x:Name="DownloadGrid" 
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
                   CanUserSortColumns="True" 
                   IsReadOnly="True"
                   Margin="40"
-                  ItemsSource="{Binding Path=Data}"
-                  VerticalAlignment="Stretch"
-                  HorizontalAlignment="Stretch">
+                  Background="Transparent"
+                  ItemsSource="{Binding Path=Files}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="FileID"/>
-                <DataGridTextColumn Header="FileName"/>
-                <DataGridTextColumn Header="Created Date"/>
-                <DataGridTextColumn Header="Activity"/>
+                <DataGridTextColumn Header="ID"
+                                    Width="50"
+                                    Binding="{Binding FileId}"/>
+                <DataGridTextColumn Header="FileName"
+                                    Width="auto"
+                                    Binding="{Binding FileName}"/>
+                <DataGridTextColumn Header="Created Date"
+                                    Width="auto"
+                                    Binding="{Binding CreatedDate}"/>
+                <DataGridTextColumn Header="User"
+                                    Width="100"
+                                    Binding="{Binding User}"/>
+                <DataGridTextColumn Header="Activity"
+                                    Width="auto"
+                                    Binding="{Binding Activity}"/>
             </DataGrid.Columns>
         </DataGrid>
 

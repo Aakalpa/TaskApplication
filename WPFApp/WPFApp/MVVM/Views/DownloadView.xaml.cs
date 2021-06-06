@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFApp.MVVM.ViewModels;
 
 namespace WPFApp.MVVM.Views
 {
@@ -23,6 +24,7 @@ namespace WPFApp.MVVM.Views
         public DownloadView()
         {
             InitializeComponent();
+            this.DataContext = new FileViewModel();
         }
     }
 }

@@ -99,8 +99,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MVVM\Models\DAL.cs" />
+    <Compile Include="MVVM\Models\File.cs" />
     <Compile Include="MVVM\ViewModels\DownloadViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\FileViewModel.cs" />
     <Compile Include="MVVM\ViewModels\HomeViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModels\UploadViewModel.cs" />

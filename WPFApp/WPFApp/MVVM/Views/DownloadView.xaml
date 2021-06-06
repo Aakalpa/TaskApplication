@@ -9,24 +9,20 @@
              d:DesignHeight="400" d:DesignWidth="650"
              >
 
-    <UserControl.DataContext>
-        <model:DAL/>
-    </UserControl.DataContext>
-
     <Grid>
-        <DataGrid x:Name="ListToDownload" 
+        <DataGrid x:Name="DownloadGrid" 
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
                   CanUserSortColumns="True" 
                   IsReadOnly="True"
                   Margin="40"
-                  ItemsSource="{Binding Path=Data}">
+                  ItemsSource="{Binding Path=Files}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="FileName"
                                     Width="auto"
                                     Binding="{Binding FileName}"/>
                 <DataGridTextColumn Header="Created Date"
-                                    Width="120"
+                                    Width="auto"
                                     Binding="{Binding CreatedDate}"/>
                 <DataGridTextColumn Header="Downloads"/>
             </DataGrid.Columns>
