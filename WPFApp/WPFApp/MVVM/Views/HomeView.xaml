@@ -26,11 +26,8 @@
                                     Width="auto"
                                     Binding="{Binding CreatedDate}"/>
                 <DataGridTextColumn Header="User"
-                                    Width="100"
-                                    Binding="{Binding User}"/>
-                <DataGridTextColumn Header="Activity"
                                     Width="auto"
-                                    Binding="{Binding Activity}"/>
+                                    Binding="{Binding User}"/>
             </DataGrid.Columns>
         </DataGrid>
 

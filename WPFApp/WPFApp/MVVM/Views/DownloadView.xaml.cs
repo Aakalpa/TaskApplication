@@ -26,5 +26,10 @@ namespace WPFApp.MVVM.Views
             InitializeComponent();
             this.DataContext = new FileViewModel();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

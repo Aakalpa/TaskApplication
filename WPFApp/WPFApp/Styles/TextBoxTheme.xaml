@@ -7,8 +7,8 @@
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border CornerRadius="10"
                             Background="#e1e6e9"
-                            Width="300"
-                            Height="40">
+                            Width="auto"
+                            Height="30">
                         <Grid>
                             <Rectangle StrokeThickness="1"/>
                             <TextBox Margin="1"
@@ -16,15 +16,15 @@
                                      BorderThickness="0"
                                      Background="Transparent"
                                      VerticalAlignment="Center"
-                                     Padding="5"
-                                     Foreground="#cfcfcf"
+                                     Padding="10, 5"
+                                     Foreground="Black"
                                      x:Name="SearchBox"/>
 
                             <TextBlock IsHitTestVisible="False"
                                        Text="Enter filename"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Left"
-                                       Margin="10,0,0,0"
+                                       Margin="10, 5"
                                        FontSize="11"
                                        Foreground="DarkGray">
 

@@ -24,7 +24,8 @@
                 <DataGridTextColumn Header="Created Date"
                                     Width="auto"
                                     Binding="{Binding CreatedDate}"/>
-                <DataGridTextColumn Header="Downloads"/>
+                <DataGridHyperlinkColumn Header="Downloads"
+                                         Binding="{Binding Activity}"/>
             </DataGrid.Columns>
         </DataGrid>
             
