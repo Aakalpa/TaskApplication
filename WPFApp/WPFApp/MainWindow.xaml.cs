@@ -36,7 +36,7 @@ namespace WPFApp
 
         private void ButtonLogout_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            Environment.Exit(0);
         }
     }
 }
