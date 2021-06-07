@@ -9,18 +9,19 @@ namespace WPFApp.MVVM.Models
 {
     public class File : ObservableObject
     {
-        private int fileId;
+        private int auditId;
         private String fileName;
         private DateTime createdDate;
         private String user;
         private String activity;
+        private String error;
 
-        public int FileId
+        public int AuditId
         {
-            get { return fileId; }
+            get { return auditId; }
             set
             {
-                fileId = value;
+                auditId = value;
                 OnPropertyChanged();
             }
         }
@@ -57,6 +58,15 @@ namespace WPFApp.MVVM.Models
             set
             {
                 activity = value;
+                OnPropertyChanged();
+            }
+        }
+        public String Error
+        {
+            get { return error; }
+            set
+            {
+                error = value;
                 OnPropertyChanged();
             }
         }

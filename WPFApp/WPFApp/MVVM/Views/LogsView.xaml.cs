@@ -1,8 +1,6 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,19 +13,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFApp.MVVM.ViewModels;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using WPFApp.MVVM.Models;
+using Newtonsoft.Json;
 
 namespace WPFApp.MVVM.Views
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for LogsView.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class LogsView : UserControl
     {
-        public HomeView()
+        public LogsView()
         {
             InitializeComponent();
-            this.DataContext = new FileViewModel();
+            this.DataContext = this;
         }
+
         public class Audit
         {
             [JsonProperty("auditId")]
@@ -64,14 +67,14 @@ namespace WPFApp.MVVM.Views
             {
                 UseDefaultCredentials = true
             });
-            HttpResponseMessage response = await client.GetAsync("https://localhost:44384/api/FileUpload/GetAuditLogWithError");
+            HttpResponseMessage response = await client.GetAsync("https://localhost:44384/api/FileUpload/GetAuditLogWithError"); 
             System.Diagnostics.Debug.WriteLine(response);
             if (response.IsSuccessStatusCode)
             {
                 string responseBody = await response.Content.ReadAsStringAsync();
                 System.Diagnostics.Debug.WriteLine(responseBody);
                 List<Audit> Audits = JsonConvert.DeserializeObject<List<Audit>>(responseBody);
-                FilesGrid.ItemsSource = (System.Collections.IEnumerable)Audits;
+                LogsGrid.ItemsSource = (System.Collections.IEnumerable)Audits;
 
             }
             else

@@ -77,7 +77,8 @@
                                  FontFamily="Fonts/#Padauk"
                                  FontWeight="ExtraLight"
                                  Foreground="white"
-                                 Style="{StaticResource MenuButtonTheme}"/>
+                                 Style="{StaticResource MenuButtonTheme}"
+                                 Command="{Binding LogsViewCommand}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"
                             Margin="40, 130">

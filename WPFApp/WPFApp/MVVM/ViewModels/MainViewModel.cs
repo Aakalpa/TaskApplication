@@ -13,12 +13,14 @@ namespace WPFApp.MVVM.ViewModels
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand UploadViewCommand { get; set; }
         public RelayCommand DownloadViewCommand { get; set; }
+        public RelayCommand LogsViewCommand { get; set; }
         #endregion
 
         #region ViewModelInstances
         public HomeViewModel HomeVM { get; set; }
         public UploadViewModel UploadVM { get; set; }
         public DownloadViewModel DownloadVM { get; set; }
+        public LogsViewModel LogsVM { get; set; }
         #endregion
 
         private object _currentView;
@@ -37,6 +39,7 @@ namespace WPFApp.MVVM.ViewModels
             HomeVM = new HomeViewModel();
             UploadVM = new UploadViewModel();
             DownloadVM = new DownloadViewModel();
+            LogsVM = new LogsViewModel();
 
             CurrentView = HomeVM;
 
@@ -54,6 +57,11 @@ namespace WPFApp.MVVM.ViewModels
             DownloadViewCommand = new RelayCommand(o =>
             {
                 CurrentView = DownloadVM;
+            });
+
+            LogsViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = LogsVM;
             });
         }
     }

@@ -28,7 +28,11 @@
             <DataTemplate DataType="{x:Type viewModel:DownloadViewModel}">
                 <view:DownloadView/>
             </DataTemplate>
-            
+
+            <DataTemplate DataType="{x:Type viewModel:LogsViewModel}">
+                <view:LogsView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
