@@ -42,6 +42,7 @@
                     FontSize="12"
                     FontFamily="Fonts/#Padauk"
                     FontWeight="ExtraLight"
+                    Click="BtnUpload_Click"
                     Style="{StaticResource ClickButtonTheme}"/>
         </StackPanel>
 

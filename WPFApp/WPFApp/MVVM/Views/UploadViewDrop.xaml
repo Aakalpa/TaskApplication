@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="WPFApp.MVVM.Views.UploadViewDrop"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFApp.MVVM.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="650">
+    <Grid>
+        <Grid.RowDefinitions>
+            <!-- Heading -->
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="FileUpload" 
+                   FontSize="30"
+                   FontWeight="Bold"
+                   FontFamily="Fonts/#Padaux"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+        <Separator VerticalAlignment="bottom"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Drag and Drop files here section -->
+            <StackPanel VerticalAlignment="Center">
+                <Grid>
+                    <!-- To accept the dropping files -->
+                    <Rectangle AllowDrop="True"
+                               Drop="Rectangle_Drop"
+                               Fill="WhiteSmoke"
+                               RadiusX="10"
+                               RadiusY="10"
+                               StrokeDashArray="10"
+                               StrokeThickness="2"
+                               StrokeDashCap="Round"
+                               Stroke="Silver"
+                               Height="150"
+                               Width="250"/>
+
+                    <!-- Logo and Text -->
+                    <StackPanel VerticalAlignment="Center"
+                                HorizontalAlignment="Center">
+                        <materialDesign:PackIcon Kind="CloudUploadOutline"
+                                                 Height="25"
+                                                 Width="25"
+                                                 Foreground="#394867"
+                                                 HorizontalAlignment="Center"/>
+                        <TextBlock Text="Drop files to upload"
+                                   FontSize="14"
+                                   FontFamily="Fonts/#Padauk"
+                                   Foreground="#9ba4b4"/>
+                    </StackPanel>
+                </Grid>
+                <Button x:Name="BtnUpload"
+                        Content="Choose File"
+                        Foreground="White"
+                        Background="#14274e" 
+                        BorderBrush="{x:Null}"
+                        Width="100"
+                        Height="30"
+                        FontSize="12"
+                        Margin="0,20,0,0"
+                        FontFamily="Fonts/#Padauk"
+                        FontWeight="ExtraLight"
+                        Click="BtnUpload_Click"
+                        Style="{StaticResource ClickButtonTheme}"/>
+            </StackPanel>
+
+            <!-- Uploading files list -->
+            <ScrollViewer Grid.Column="1"
+                          Margin="0, 45"
+                          HorizontalScrollBarVisibility="Disabled"
+                          VerticalScrollBarVisibility="Hidden">
+                <Grid>
+                    <ItemsControl x:Name="UploadingFileList" 
+                                  HorizontalAlignment="Left" 
+                                  Width="324">
+                        <TextBlock Text=" Uploading Files"
+                                   FontSize="14"
+                                   FontWeight="SemiBold"/>
+
+                        <!-- Custom Controls for pregress bar -->
+
+                    </ItemsControl>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</UserControl>

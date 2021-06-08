@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net.Http;
 
 namespace WPFApp.MVVM.Views
 {
@@ -34,9 +35,31 @@ namespace WPFApp.MVVM.Views
             Nullable<bool> result = openFileDlg.ShowDialog();
             // Get the selected file name and display in a TextBox.
             // Load content of file in a TextBlock
-            if (result == true)
+            if (result == true) //if the dialog box is opened
             {
                 FileNameTextBox.Text = openFileDlg.FileName;
+            }
+        }
+
+        private async void BtnUpload_Click(object sender, RoutedEventArgs e)
+        {
+            HttpClient client = new HttpClient(new HttpClientHandler()
+            {
+                UseDefaultCredentials = true
+            });
+            var FileToUpload = FileNameTextBox.Text;
+            System.Diagnostics.Debug.WriteLine(FileToUpload);
+
+            var response = await client.PostAsJsonAsync("https://localhost:44384/api/FileUpload/UploadFile", FileToUpload);
+
+            if (response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("File Uploaded");
+                FileNameTextBox.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
             }
         }
     }
