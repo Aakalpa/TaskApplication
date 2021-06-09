@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net.Http;
+using System.Net;
+using System.IO;
+using System.Net.Http.Headers;
+using System.Globalization;
 
 namespace WPFApp.MVVM.Views
 {
@@ -41,26 +45,41 @@ namespace WPFApp.MVVM.Views
             }
         }
 
-        private async void BtnUpload_Click(object sender, RoutedEventArgs e)
+        private void BtnUpload_Click(object sender, RoutedEventArgs e)
         {
-            HttpClient client = new HttpClient(new HttpClientHandler()
-            {
-                UseDefaultCredentials = true
-            });
-            var FileToUpload = FileNameTextBox.Text;
-            System.Diagnostics.Debug.WriteLine(FileToUpload);
+            var fileToUpload = FileNameTextBox.Text;
 
-            var response = await client.PostAsJsonAsync("https://localhost:44384/api/FileUpload/UploadFile", FileToUpload);
+            #region Using_HTTPClient
+            //HttpClient client = new HttpClient(new HttpClientHandler()
+            //{
+            //    UseDefaultCredentials = true
+            //});
+            //System.Diagnostics.Debug.WriteLine(FileToUpload);
 
-            if (response.IsSuccessStatusCode)
+            //var response = await client.PostAsJsonAsync("https://localhost:44384/api/FileUpload/UploadFile", FileToUpload);
+
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    MessageBox.Show("File Uploaded");
+            //    FileNameTextBox.Text = "";
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
+            //}
+            #endregion
+
+            #region Using_WebAclient
+            using (var client = new WebClient()) //WebClient  
             {
-                MessageBox.Show("File Uploaded");
-                FileNameTextBox.Text = "";
+                client.Credentials = CredentialCache.DefaultCredentials;
+                byte[] response = client.UploadFile("https://localhost:44384/api/FileUpload/UploadFile", fileToUpload);
+                string s = System.Text.Encoding.UTF8.GetString(response, 0, response.Length);
+                MessageBox.Show(s);
             }
-            else
-            {
-                MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
-            }
+            #endregion
+
+
         }
     }
 }
