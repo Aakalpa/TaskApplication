@@ -7,25 +7,34 @@
              xmlns:model="clr-namespace:WPFApp.MVVM.Models"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="650"
-             >
+             Loaded="View_Loaded">
 
     <Grid>
-        <DataGrid x:Name="DownloadGrid" 
+        <DataGrid x:Name="UploadedFilesGrid" 
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
                   CanUserSortColumns="True" 
                   IsReadOnly="True"
-                  Margin="40"
-                  ItemsSource="{Binding Path=Files}">
+                  Margin="40">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="FileName"
                                     Width="auto"
-                                    Binding="{Binding FileName}"/>
+                                    Binding="{Binding fileName}"/>
                 <DataGridTextColumn Header="Created Date"
                                     Width="auto"
-                                    Binding="{Binding CreatedDate}"/>
-                <DataGridHyperlinkColumn Header="Downloads"
-                                         Binding="{Binding Activity}"/>
+                                    Binding="{Binding date}"/>
+                <DataGridTextColumn Header="Created Time"
+                                         Binding="{Binding time}"/>
+                <DataGridTemplateColumn Header="Downloads">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Download" 
+                                       TextDecorations="Underline"
+                                       MouseLeftButtonUp="Download_Click"
+                                       Style="{StaticResource LeftHoverBackground}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
             
