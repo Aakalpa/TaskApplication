@@ -12,6 +12,7 @@
                 <ResourceDictionary Source="Styles/MenuButtonTheme.xaml" />
                 <ResourceDictionary Source="Styles/ClickButtonTheme.xaml" />
                 <ResourceDictionary Source="Styles/TextBoxTheme.xaml" />
+                <ResourceDictionary Source="Styles/TextHoverTheme.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
